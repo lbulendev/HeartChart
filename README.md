@@ -1,5 +1,5 @@
 # HeartChart
-This is a sample app using 'bluetooth'
+This is a sample app using 'bluetooth' (BLE)
 <ol>
 <li>I added 'Beets BLU' bluetooth library (obj-c) to a swift project
 <li>It detects a paired 'Beets' Heart monitor and tracks the heart rate
