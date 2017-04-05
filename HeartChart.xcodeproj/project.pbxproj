@@ -15,6 +15,7 @@
 		A4531F0A1E608B8100D9B1B8 /* libBeetsBLU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4531F091E608B8100D9B1B8 /* libBeetsBLU.a */; };
 		A468E7981E608C9C0008AEEA /* HeartChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468E7971E608C9C0008AEEA /* HeartChartViewController.swift */; };
 		A468E79A1E608D6F0008AEEA /* MyHeartChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468E7991E608D6F0008AEEA /* MyHeartChart.swift */; };
+		A4F9CE851E92F8F700EA1F44 /* HeartChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F9CE841E92F8F700EA1F44 /* HeartChartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A468E7971E608C9C0008AEEA /* HeartChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartChartViewController.swift; sourceTree = "<group>"; };
 		A468E7991E608D6F0008AEEA /* MyHeartChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHeartChart.swift; sourceTree = "<group>"; };
 		A4801FE81E608E9A00CCEC29 /* HeartChart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeartChart-Bridging-Header.h"; sourceTree = "<group>"; };
+		A4F9CE841E92F8F700EA1F44 /* HeartChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartChartTableViewCell.swift; sourceTree = "<group>"; };
 		E365D4ACDA198F69C616ADD9 /* Pods-HeartChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeartChart/Pods-HeartChart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 			children = (
 				A4531EEE1E608A5000D9B1B8 /* Main.storyboard */,
 				A468E7991E608D6F0008AEEA /* MyHeartChart.swift */,
+				A4F9CE841E92F8F700EA1F44 /* HeartChartTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,11 +184,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Larry Bulen";
 				TargetAttributes = {
 					A4531EE61E608A5000D9B1B8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 567JF9Y7U9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -275,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A468E7981E608C9C0008AEEA /* HeartChartViewController.swift in Sources */,
+				A4F9CE851E92F8F700EA1F44 /* HeartChartTableViewCell.swift in Sources */,
 				A468E79A1E608D6F0008AEEA /* MyHeartChart.swift in Sources */,
 				A4531EEB1E608A5000D9B1B8 /* AppDelegate.swift in Sources */,
 			);
@@ -342,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -386,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -399,8 +404,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4DF041112F722E0DDF42B4C1 /* Pods-HeartChart.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 567JF9Y7U9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HeartChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -420,8 +426,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E365D4ACDA198F69C616ADD9 /* Pods-HeartChart.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 567JF9Y7U9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HeartChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

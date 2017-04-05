@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hHF-jF-JOp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hHF-jF-JOp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,68 +22,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuO-VB-zre">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ol1-F8-JIf" customClass="MyHeartChart" customModule="HeartChart" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="45" width="359" height="233"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="233" id="ZUq-nU-E3K"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-RQ-zxo">
-                                        <rect key="frame" x="16" y="354" width="35" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IqD-TQ-cQb">
-                                        <rect key="frame" x="59" y="349" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Pjd-qq-onu"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Heart Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKb-5n-gRb">
-                                        <rect key="frame" x="128.5" y="8" width="118" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="IqD-TQ-cQb" firstAttribute="leading" secondItem="Al4-RQ-zxo" secondAttribute="trailing" constant="8" id="2p1-Qu-1Kz"/>
-                                    <constraint firstItem="IqD-TQ-cQb" firstAttribute="top" secondItem="Ol1-F8-JIf" secondAttribute="bottom" constant="71" id="6XC-jy-qOo"/>
-                                    <constraint firstItem="Al4-RQ-zxo" firstAttribute="top" secondItem="Ol1-F8-JIf" secondAttribute="bottom" constant="76" id="8vx-9I-NbV"/>
-                                    <constraint firstItem="pKb-5n-gRb" firstAttribute="centerX" secondItem="CuO-VB-zre" secondAttribute="centerX" id="V3C-ID-2zy"/>
-                                    <constraint firstItem="Ol1-F8-JIf" firstAttribute="top" secondItem="pKb-5n-gRb" secondAttribute="bottom" constant="16" id="WgF-KZ-caA"/>
-                                    <constraint firstItem="IqD-TQ-cQb" firstAttribute="top" secondItem="Ol1-F8-JIf" secondAttribute="bottom" constant="71" id="X16-xu-b2F"/>
-                                    <constraint firstItem="Ol1-F8-JIf" firstAttribute="centerX" secondItem="CuO-VB-zre" secondAttribute="centerX" id="Y3q-xX-7lb"/>
-                                    <constraint firstItem="pKb-5n-gRb" firstAttribute="top" secondItem="CuO-VB-zre" secondAttribute="top" constant="8" id="hDH-T8-VMe"/>
-                                    <constraint firstItem="Ol1-F8-JIf" firstAttribute="leading" secondItem="CuO-VB-zre" secondAttribute="leading" constant="8" id="iqN-Hg-PeL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ol1-F8-JIf" secondAttribute="trailing" constant="8" id="j4P-3t-38E"/>
-                                    <constraint firstItem="Al4-RQ-zxo" firstAttribute="leading" secondItem="CuO-VB-zre" secondAttribute="leading" constant="16" id="l5B-Bl-rzR"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ol1-F8-JIf" secondAttribute="bottom" constant="325" id="lIu-V8-GYC"/>
-                                    <constraint firstItem="IqD-TQ-cQb" firstAttribute="leading" secondItem="Al4-RQ-zxo" secondAttribute="trailing" constant="8" id="r5I-8J-RHQ"/>
-                                </constraints>
-                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="233" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9k7-HP-mul">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HCTableViewCell" rowHeight="233" id="Rfe-U1-yku" customClass="HeartChartTableViewCell" customModule="HeartChart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="233"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rfe-U1-yku" id="3E7-sX-QTI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="232.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wq5-2Y-D9o" customClass="MyHeartChart" customModule="HeartChart" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="166"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Wq5-2Y-D9o" secondAttribute="height" multiplier="375:166" id="kJs-HZ-CeL"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5h-9K-xsb">
+                                                    <rect key="frame" x="71" y="198" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xya-gM-oQE">
+                                                    <rect key="frame" x="129" y="194" width="87" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="87" id="ezy-ch-BNH"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="K5h-9K-xsb" firstAttribute="leading" secondItem="3E7-sX-QTI" secondAttribute="leadingMargin" constant="63" id="5pm-yO-5hV"/>
+                                                <constraint firstItem="Wq5-2Y-D9o" firstAttribute="leading" secondItem="3E7-sX-QTI" secondAttribute="leading" id="DCL-ga-98S"/>
+                                                <constraint firstItem="xya-gM-oQE" firstAttribute="top" secondItem="Wq5-2Y-D9o" secondAttribute="bottom" constant="20" id="P8k-bw-zmK"/>
+                                                <constraint firstItem="xya-gM-oQE" firstAttribute="leading" secondItem="K5h-9K-xsb" secondAttribute="trailing" constant="23" id="Yge-Pw-IxP"/>
+                                                <constraint firstItem="K5h-9K-xsb" firstAttribute="top" secondItem="Wq5-2Y-D9o" secondAttribute="bottom" constant="24" id="eT0-pg-eod"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wq5-2Y-D9o" secondAttribute="trailing" id="g50-tT-fNv"/>
+                                                <constraint firstItem="Wq5-2Y-D9o" firstAttribute="top" secondItem="3E7-sX-QTI" secondAttribute="top" constant="8" id="zgd-tw-kLV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ageTextField" destination="xya-gM-oQE" id="hD7-YO-6Tf"/>
+                                            <outlet property="chartView" destination="Wq5-2Y-D9o" id="H7f-Hm-cqW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hHF-jF-JOp" id="Ibt-xl-3at"/>
+                                    <outlet property="delegate" destination="hHF-jF-JOp" id="xnl-p0-Vvi"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CuO-VB-zre" firstAttribute="top" secondItem="LO6-xC-tq4" secondAttribute="bottom" id="6ZH-2Q-35s"/>
-                            <constraint firstItem="CuO-VB-zre" firstAttribute="leading" secondItem="BFB-2Z-7uD" secondAttribute="leading" id="Nsi-0E-twf"/>
-                            <constraint firstAttribute="trailing" secondItem="CuO-VB-zre" secondAttribute="trailing" id="ycg-7Q-UB1"/>
-                            <constraint firstItem="sCV-TH-TYg" firstAttribute="top" secondItem="CuO-VB-zre" secondAttribute="bottom" id="z4T-I9-Dix"/>
+                            <constraint firstItem="sCV-TH-TYg" firstAttribute="top" secondItem="9k7-HP-mul" secondAttribute="bottom" id="EYt-9P-U5d"/>
+                            <constraint firstItem="9k7-HP-mul" firstAttribute="leading" secondItem="BFB-2Z-7uD" secondAttribute="leading" id="PYx-wD-31X"/>
+                            <constraint firstAttribute="trailing" secondItem="9k7-HP-mul" secondAttribute="trailing" id="WIx-IR-ITV"/>
+                            <constraint firstItem="9k7-HP-mul" firstAttribute="top" secondItem="LO6-xC-tq4" secondAttribute="bottom" constant="8" id="oCk-W2-o67"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ztE-IC-LLw"/>
                     <connections>
-                        <outlet property="ageTextField" destination="IqD-TQ-cQb" id="9GB-Lb-Edy"/>
-                        <outlet property="chartView" destination="Ol1-F8-JIf" id="aed-Ii-fzD"/>
-                        <outlet property="scrollView" destination="CuO-VB-zre" id="vPR-m9-e6t"/>
+                        <outlet property="myTableView" destination="9k7-HP-mul" id="Ut5-Ft-F58"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sld-pV-b6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
