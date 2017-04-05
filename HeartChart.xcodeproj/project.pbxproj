@@ -189,7 +189,6 @@
 				TargetAttributes = {
 					A4531EE61E608A5000D9B1B8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 567JF9Y7U9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -406,7 +405,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 567JF9Y7U9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HeartChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -428,7 +427,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 567JF9Y7U9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HeartChart/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
