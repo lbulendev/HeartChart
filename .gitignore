@@ -1,3 +1,5 @@
-Pods/
-HeartChart.xcworkspace/*
-
+.gitignore
+ios-Swift/HeartChart-iOS/HeartChart-iOS.xcodeproj/
+ios-Swift/HeartChart-iOS/HeartChart-iOS.xcworkspace/
+ios-Swift/HeartChart-iOS/Podfile.lock
+ios-Swift/HeartChart-iOS/Pods/

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45DF8BF211FA6CE008F0D3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45DF8BE211FA6CE008F0D3C /* Constants.swift */; };
 		A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */; };
 		A4E3A6EC211F804B00E5DE65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6EB211F804B00E5DE65 /* ViewController.swift */; };
 		A4E3A6EF211F804B00E5DE65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6ED211F804B00E5DE65 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		A4E3A6F4211F804C00E5DE65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6F2211F804C00E5DE65 /* LaunchScreen.storyboard */; };
 		A4E3A6FF211F804C00E5DE65 /* HeartChart_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6FE211F804C00E5DE65 /* HeartChart_iOSTests.swift */; };
 		A4E3A70A211F804C00E5DE65 /* HeartChart_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A709211F804C00E5DE65 /* HeartChart_iOSUITests.swift */; };
+		E2BA2DE983ACD13396489783 /* Pods_HeartChart_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6794F8AAAAAD875F20157 /* Pods_HeartChart_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18C6794F8AAAAAD875F20157 /* Pods_HeartChart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeartChart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5127029A894C858C575EFEFD /* Pods-HeartChart-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartChart-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A45DF8BE211FA6CE008F0D3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4E3A6E6211F804B00E5DE65 /* HeartChart-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartChart-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4E3A6EB211F804B00E5DE65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		A4E3A705211F804C00E5DE65 /* HeartChart-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HeartChart-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E3A709211F804C00E5DE65 /* HeartChart_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartChart_iOSUITests.swift; sourceTree = "<group>"; };
 		A4E3A70B211F804C00E5DE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A5AD84DECC91629258B354 /* Pods-HeartChart-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartChart-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2BA2DE983ACD13396489783 /* Pods_HeartChart_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A45DF8BA211FA5DE008F0D3C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				A45DF8BE211FA6CE008F0D3C /* Constants.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		A45DF8BB211FA5EB008F0D3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A45DF8BC211FA5F4008F0D3C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			path = "HeartChart-iOS/ViewControllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		A45DF8BD211FA629008F0D3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4E3A6ED211F804B00E5DE65 /* Main.storyboard */,
+				A4E3A6F2211F804C00E5DE65 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			path = "HeartChart-iOS/Views";
+			sourceTree = SOURCE_ROOT;
+		};
 		A4E3A6DD211F804B00E5DE65 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				A4E3A6FD211F804C00E5DE65 /* HeartChart-iOSTests */,
 				A4E3A708211F804C00E5DE65 /* HeartChart-iOSUITests */,
 				A4E3A6E7211F804B00E5DE65 /* Products */,
+				ACD997EBEF5FED36B4AAA708 /* Pods */,
+				D7EFC02A74CEC073716454B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +139,13 @@
 		A4E3A6E8211F804B00E5DE65 /* HeartChart-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A45DF8BA211FA5DE008F0D3C /* Misc */,
+				A45DF8BB211FA5EB008F0D3C /* Models */,
+				A45DF8BC211FA5F4008F0D3C /* ViewControllers */,
+				A45DF8BD211FA629008F0D3C /* Views */,
 				A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */,
 				A4E3A6EB211F804B00E5DE65 /* ViewController.swift */,
-				A4E3A6ED211F804B00E5DE65 /* Main.storyboard */,
 				A4E3A6F0211F804C00E5DE65 /* Assets.xcassets */,
-				A4E3A6F2211F804C00E5DE65 /* LaunchScreen.storyboard */,
 				A4E3A6F5211F804C00E5DE65 /* Info.plist */,
 			);
 			path = "HeartChart-iOS";
@@ -125,6 +169,23 @@
 			path = "HeartChart-iOSUITests";
 			sourceTree = "<group>";
 		};
+		ACD997EBEF5FED36B4AAA708 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5127029A894C858C575EFEFD /* Pods-HeartChart-iOS.debug.xcconfig */,
+				D0A5AD84DECC91629258B354 /* Pods-HeartChart-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D7EFC02A74CEC073716454B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18C6794F8AAAAAD875F20157 /* Pods_HeartChart_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4E3A70E211F804D00E5DE65 /* Build configuration list for PBXNativeTarget "HeartChart-iOS" */;
 			buildPhases = (
+				9F4A7D3FB9B4F1950AE814B0 /* [CP] Check Pods Manifest.lock */,
 				A4E3A6E2211F804B00E5DE65 /* Sources */,
 				A4E3A6E3211F804B00E5DE65 /* Frameworks */,
 				A4E3A6E4211F804B00E5DE65 /* Resources */,
+				64D316BF63860DF8936F39ED /* [CP] Embed Pods Frameworks */,
+				513515E8D4037D9F50E4221B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +315,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		513515E8D4037D9F50E4221B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64D316BF63860DF8936F39ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F4A7D3FB9B4F1950AE814B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HeartChart-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4E3A6E2211F804B00E5DE65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +383,7 @@
 			files = (
 				A4E3A6EC211F804B00E5DE65 /* ViewController.swift in Sources */,
 				A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */,
+				A45DF8BF211FA6CE008F0D3C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +554,7 @@
 		};
 		A4E3A70F211F804D00E5DE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5127029A894C858C575EFEFD /* Pods-HeartChart-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +573,7 @@
 		};
 		A4E3A710211F804D00E5DE65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A5AD84DECC91629258B354 /* Pods-HeartChart-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
