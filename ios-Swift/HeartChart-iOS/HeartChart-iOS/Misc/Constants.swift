@@ -12,7 +12,10 @@ import CoreGraphics
 struct Constants {
     struct APIKEY {
         static let FacebookOauthKey = ""
-        static let GoogleOauthKey = ""
+        static let GoogleOauthKey = "AIzaSyCWLlE34B15H68QD8YL9m8z6us28tqmKfc"
+//        static let GoogleClientId = "com.lbulenapps.HeartChart-iOS"
+        static let GoogleClientId = "200838422592-ubmsfu2bivhv30jtmj2kivgsgg637crp.apps.googleusercontent.com"
+        static let ReverseGoogleClientId = "com.googleusercontent.apps.200838422592-ubmsfu2bivhv30jtmj2kivgsgg637crp"
     }
 
     struct FontSize {

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A428FF82211FC99D00F54C31 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428FF81211FC99D00F54C31 /* PersistentStore.swift */; };
 		A45DF8BF211FA6CE008F0D3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45DF8BE211FA6CE008F0D3C /* Constants.swift */; };
+		A45DF8C1211FA9B8008F0D3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45DF8C0211FA9B8008F0D3C /* MainViewController.swift */; };
 		A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */; };
-		A4E3A6EC211F804B00E5DE65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6EB211F804B00E5DE65 /* ViewController.swift */; };
 		A4E3A6EF211F804B00E5DE65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6ED211F804B00E5DE65 /* Main.storyboard */; };
 		A4E3A6F1211F804C00E5DE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6F0211F804C00E5DE65 /* Assets.xcassets */; };
 		A4E3A6F4211F804C00E5DE65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6F2211F804C00E5DE65 /* LaunchScreen.storyboard */; };
@@ -38,10 +39,11 @@
 /* Begin PBXFileReference section */
 		18C6794F8AAAAAD875F20157 /* Pods_HeartChart_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeartChart_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5127029A894C858C575EFEFD /* Pods-HeartChart-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeartChart-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A428FF81211FC99D00F54C31 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		A45DF8BE211FA6CE008F0D3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A45DF8C0211FA9B8008F0D3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4E3A6E6211F804B00E5DE65 /* HeartChart-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartChart-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4E3A6EB211F804B00E5DE65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4E3A6EE211F804B00E5DE65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4E3A6F0211F804C00E5DE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4E3A6F3211F804C00E5DE65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A45DF8BE211FA6CE008F0D3C /* Constants.swift */,
+				A428FF81211FC99D00F54C31 /* PersistentStore.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -99,6 +102,7 @@
 		A45DF8BC211FA5F4008F0D3C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A45DF8C0211FA9B8008F0D3C /* MainViewController.swift */,
 			);
 			name = ViewControllers;
 			path = "HeartChart-iOS/ViewControllers";
@@ -144,7 +148,6 @@
 				A45DF8BC211FA5F4008F0D3C /* ViewControllers */,
 				A45DF8BD211FA629008F0D3C /* Views */,
 				A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */,
-				A4E3A6EB211F804B00E5DE65 /* ViewController.swift */,
 				A4E3A6F0211F804C00E5DE65 /* Assets.xcassets */,
 				A4E3A6F5211F804C00E5DE65 /* Info.plist */,
 			);
@@ -381,8 +384,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4E3A6EC211F804B00E5DE65 /* ViewController.swift in Sources */,
+				A45DF8C1211FA9B8008F0D3C /* MainViewController.swift in Sources */,
 				A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */,
+				A428FF82211FC99D00F54C31 /* PersistentStore.swift in Sources */,
 				A45DF8BF211FA6CE008F0D3C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
