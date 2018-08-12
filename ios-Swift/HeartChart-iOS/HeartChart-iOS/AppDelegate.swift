@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -45,12 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // GIDSignInDelegate - delegate method
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url as URL?,
                                                  sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                  annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
+    // This method is overridden in the Viewcontroller
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
         if let error = error {
@@ -59,19 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // Perform any operations on signed in user here.
             let userId = user.userID                  // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
-//            let fullName = user.profile.name
-//            let givenName = user.profile.givenName
-//            let familyName = user.profile.familyName
-//            let email = user.profile.email
-            // ...
             print("userId: " + userId!)
             print("idToken: " + idToken!)
-//            print("fullName: " + fullName!)
-//            print("givenName: " + givenName!)
-//            print("familyName: " + familyName!)
-//            print("email: " + email!)
             print("clientId: " + GIDSignIn.sharedInstance().clientID)
-//            print("serverAuthCode: " + GIDSignIn.sharedInstance().currentUser.serverAuthCode!)
             print("accessToken: " + GIDSignIn.sharedInstance().currentUser.authentication.accessToken!)
             let persistentStore = PersistentStore()
             persistentStore.setGoogleUserToken(token: idToken!)
@@ -86,5 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print("signed out!")
     }
 
+    // FBSDKApplicationDelegate - delegate method
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if let _ = Bundle.main.object(forInfoDictionaryKey: "FacebookAppID") as? String {
+            return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                         open: url,
+                                                                         sourceApplication: sourceApplication,
+                                                                         annotation: annotation)
+        }
+        return false
+    }
 }
 

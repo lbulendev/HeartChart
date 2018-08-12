@@ -28,7 +28,19 @@
 				<string>com.googleusercontent.apps.200838422592-ubmsfu2bivhv30jtmj2kivgsgg637crp</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb519291461856373</string>
+			</array>
+		</dict>
 	</array>
+    <key>FacebookAppID</key>
+    <string>519291461856373</string>
+    <key>FacebookDisplayName</key>
+    <string>HeartChart-iOS</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

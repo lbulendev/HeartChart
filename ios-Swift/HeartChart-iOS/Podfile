@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'HeartChart-iOS' do
   pod 'GoogleSignIn', '~> 4.1.2'
+  pod 'FBSDKLoginKit', '~> 4.35.0'
 end
 
 

@@ -30,6 +30,9 @@ class PersistentStore {
     }
 
     func getFacebookUserToken() -> String {
+        if (userDefaults.object(forKey: FACEBOOKUSERTOKEN) == nil) {
+            return ""
+        }
         return userDefaults.string(forKey: FACEBOOKUSERTOKEN)!
     }
 
@@ -48,6 +51,9 @@ class PersistentStore {
     }
 
     func getGoogleUserToken() -> String {
+        if (userDefaults.object(forKey: GOOGLEUSERTOKEN) == nil) {
+            return ""
+        }
         return userDefaults.string(forKey: GOOGLEUSERTOKEN)!
     }
 
