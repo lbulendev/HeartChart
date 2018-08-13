@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreBluetooth
 import CoreGraphics
 
 struct Constants {
@@ -26,13 +27,14 @@ struct Constants {
         static let Title: CGFloat = 24.0
     }
 
+    struct BLUService {
+        static let heartRateServiceCBUUID = CBUUID(string: "0x180D")
+        static let heartRateMeasurementCharacteristicCBUUID = CBUUID(string: "2A37")
+        static let bodySensorLocationCharacteristicCBUUID = CBUUID(string: "2A38")
+    }
     struct Limits {
         static let DefaultMove: Int = 15
         static let DefaultPlaceholder: Bool = false // "Clear"
         static let DefaultTime: Int = 5
-        static let MaxMove: Float = 30.0
-        static let MaxTime: Float = 30.0
-        static let MinMove: Float = 5.0
-        static let MinTime: Float = 1.0
     }
 }
