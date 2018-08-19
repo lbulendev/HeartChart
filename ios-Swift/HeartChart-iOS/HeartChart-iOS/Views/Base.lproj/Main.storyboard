@@ -39,20 +39,53 @@
                                     <constraint firstAttribute="width" constant="80" id="aK5-Xh-tbi"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-Z5-Qjs" customClass="HeartChart" customModule="HeartChart_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="168" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Atj-cL-6be"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEq-AV-tmh">
+                                <rect key="frame" x="75" y="525" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="LPA-9A-kmS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIa-rm-FPs">
+                                <rect key="frame" x="20" y="525" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WEh-rb-Gai" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4g5-wl-g5i"/>
+                            <constraint firstItem="qIa-rm-FPs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5V7-6k-teW"/>
                             <constraint firstItem="4mw-wk-HP7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="5bS-v9-fZe"/>
+                            <constraint firstItem="tJS-Z5-Qjs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CcI-qk-ReZ"/>
+                            <constraint firstItem="tJS-Z5-Qjs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ch1-ac-Gfs"/>
+                            <constraint firstItem="tJS-Z5-Qjs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jwg-zX-ctx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WH4-2V-67C" secondAttribute="trailing" constant="20" id="Kqx-Ap-dcI"/>
+                            <constraint firstItem="qIa-rm-FPs" firstAttribute="top" secondItem="tJS-Z5-Qjs" secondAttribute="bottom" constant="57" id="NfF-PM-Cnr"/>
+                            <constraint firstItem="DEq-AV-tmh" firstAttribute="leading" secondItem="qIa-rm-FPs" secondAttribute="trailing" constant="20" id="Nig-SZ-Fnj"/>
+                            <constraint firstItem="tJS-Z5-Qjs" firstAttribute="top" secondItem="WH4-2V-67C" secondAttribute="bottom" constant="17" id="b5W-A1-eRL"/>
+                            <constraint firstItem="DEq-AV-tmh" firstAttribute="top" secondItem="tJS-Z5-Qjs" secondAttribute="bottom" constant="57" id="dIz-19-Fvh"/>
                             <constraint firstItem="4mw-wk-HP7" firstAttribute="leading" secondItem="WEh-rb-Gai" secondAttribute="trailing" constant="30" id="dcK-4X-gxG"/>
                             <constraint firstItem="WEh-rb-Gai" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ek3-cw-ZNS"/>
                             <constraint firstItem="WH4-2V-67C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fjX-RU-efX"/>
                             <constraint firstItem="WH4-2V-67C" firstAttribute="top" secondItem="WEh-rb-Gai" secondAttribute="bottom" constant="40" id="idh-J2-6ED"/>
+                            <constraint firstItem="tJS-Z5-Qjs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qtv-fO-ZWk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ageTextField" destination="DEq-AV-tmh" id="Rxg-91-JLg"/>
+                        <outlet property="chartView" destination="tJS-Z5-Qjs" id="EsS-8Q-9AM"/>
                         <outlet property="facebookSignInButton" destination="4mw-wk-HP7" id="xxT-TW-44b"/>
                         <outlet property="googleSignInButton" destination="WEh-rb-Gai" id="NgV-CZ-0Tr"/>
                         <outlet property="oauthLabel" destination="WH4-2V-67C" id="pBE-JY-zKK"/>

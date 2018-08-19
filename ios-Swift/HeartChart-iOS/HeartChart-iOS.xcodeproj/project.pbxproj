@@ -10,6 +10,8 @@
 		A428FF82211FC99D00F54C31 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A428FF81211FC99D00F54C31 /* PersistentStore.swift */; };
 		A45DF8BF211FA6CE008F0D3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45DF8BE211FA6CE008F0D3C /* Constants.swift */; };
 		A45DF8C1211FA9B8008F0D3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45DF8C0211FA9B8008F0D3C /* MainViewController.swift */; };
+		A45E8653212A144A00BA2E85 /* libBeetsBLU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A45E864D212A144A00BA2E85 /* libBeetsBLU.a */; };
+		A45E8655212A14FE00BA2E85 /* HeartChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E8654212A14FE00BA2E85 /* HeartChart.swift */; };
 		A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */; };
 		A4E3A6EF211F804B00E5DE65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6ED211F804B00E5DE65 /* Main.storyboard */; };
 		A4E3A6F1211F804C00E5DE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4E3A6F0211F804C00E5DE65 /* Assets.xcassets */; };
@@ -42,6 +44,20 @@
 		A428FF81211FC99D00F54C31 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		A45DF8BE211FA6CE008F0D3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A45DF8C0211FA9B8008F0D3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A45E8647212A144A00BA2E85 /* BBBLEDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEDiscoveryManager.h; sourceTree = "<group>"; };
+		A45E8648212A144A00BA2E85 /* BBBLEWSSimpleCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEWSSimpleCollector.h; sourceTree = "<group>"; };
+		A45E8649212A144A00BA2E85 /* BBBLEHRMDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEHRMDiscoveryManager.h; sourceTree = "<group>"; };
+		A45E864A212A144A00BA2E85 /* BBBLEBSCDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEBSCDiscoveryManager.h; sourceTree = "<group>"; };
+		A45E864B212A144A00BA2E85 /* BBBLEWSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEWSDevice.h; sourceTree = "<group>"; };
+		A45E864C212A144A00BA2E85 /* BBBLEBSCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEBSCDevice.h; sourceTree = "<group>"; };
+		A45E864D212A144A00BA2E85 /* libBeetsBLU.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBeetsBLU.a; sourceTree = "<group>"; };
+		A45E864E212A144A00BA2E85 /* BBBLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEDevice.h; sourceTree = "<group>"; };
+		A45E864F212A144A00BA2E85 /* BBBLEWSDiscoveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEWSDiscoveryManager.h; sourceTree = "<group>"; };
+		A45E8650212A144A00BA2E85 /* BBBLEHRMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEHRMDevice.h; sourceTree = "<group>"; };
+		A45E8651212A144A00BA2E85 /* BBBLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLE.h; sourceTree = "<group>"; };
+		A45E8652212A144A00BA2E85 /* BBBLEDiscoveryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLEDiscoveryData.h; sourceTree = "<group>"; };
+		A45E8654212A14FE00BA2E85 /* HeartChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartChart.swift; sourceTree = "<group>"; };
+		A4A79D11212A16E300DB5DFD /* HeartChart_iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HeartChart_iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4E3A6E6211F804B00E5DE65 /* HeartChart-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HeartChart-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E3A6E9211F804B00E5DE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4E3A6EE211F804B00E5DE65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BA2DE983ACD13396489783 /* Pods_HeartChart_iOS.framework in Frameworks */,
+				A45E8653212A144A00BA2E85 /* libBeetsBLU.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +103,10 @@
 		A45DF8BA211FA5DE008F0D3C /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				A45E8646212A144A00BA2E85 /* BBBLE */,
 				A45DF8BE211FA6CE008F0D3C /* Constants.swift */,
 				A428FF81211FC99D00F54C31 /* PersistentStore.swift */,
+				A4A79D11212A16E300DB5DFD /* HeartChart_iOS-Bridging-Header.h */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -111,12 +130,32 @@
 		A45DF8BD211FA629008F0D3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A4E3A6ED211F804B00E5DE65 /* Main.storyboard */,
+				A45E8654212A14FE00BA2E85 /* HeartChart.swift */,
 				A4E3A6F2211F804C00E5DE65 /* LaunchScreen.storyboard */,
+				A4E3A6ED211F804B00E5DE65 /* Main.storyboard */,
 			);
 			name = Views;
 			path = "HeartChart-iOS/Views";
 			sourceTree = SOURCE_ROOT;
+		};
+		A45E8646212A144A00BA2E85 /* BBBLE */ = {
+			isa = PBXGroup;
+			children = (
+				A45E8647212A144A00BA2E85 /* BBBLEDiscoveryManager.h */,
+				A45E8648212A144A00BA2E85 /* BBBLEWSSimpleCollector.h */,
+				A45E8649212A144A00BA2E85 /* BBBLEHRMDiscoveryManager.h */,
+				A45E864A212A144A00BA2E85 /* BBBLEBSCDiscoveryManager.h */,
+				A45E864B212A144A00BA2E85 /* BBBLEWSDevice.h */,
+				A45E864C212A144A00BA2E85 /* BBBLEBSCDevice.h */,
+				A45E864D212A144A00BA2E85 /* libBeetsBLU.a */,
+				A45E864E212A144A00BA2E85 /* BBBLEDevice.h */,
+				A45E864F212A144A00BA2E85 /* BBBLEWSDiscoveryManager.h */,
+				A45E8650212A144A00BA2E85 /* BBBLEHRMDevice.h */,
+				A45E8651212A144A00BA2E85 /* BBBLE.h */,
+				A45E8652212A144A00BA2E85 /* BBBLEDiscoveryData.h */,
+			);
+			path = BBBLE;
+			sourceTree = "<group>";
 		};
 		A4E3A6DD211F804B00E5DE65 = {
 			isa = PBXGroup;
@@ -260,6 +299,11 @@
 				TargetAttributes = {
 					A4E3A6E5211F804B00E5DE65 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A4E3A6F9211F804C00E5DE65 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -345,6 +389,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HeartChart-iOS/Pods-HeartChart-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
@@ -354,6 +399,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -390,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45E8655212A14FE00BA2E85 /* HeartChart.swift in Sources */,
 				A45DF8C1211FA9B8008F0D3C /* MainViewController.swift in Sources */,
 				A4E3A6EA211F804B00E5DE65 /* AppDelegate.swift in Sources */,
 				A428FF82211FC99D00F54C31 /* PersistentStore.swift in Sources */,
@@ -569,14 +616,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 567JF9Y7U9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "HeartChart-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HeartChart-iOS/Misc/BBBLE",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lbulenapps.HeartChart-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./HeartChart-iOS/Misc/HeartChart_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -589,14 +642,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 567JF9Y7U9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "HeartChart-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HeartChart-iOS/Misc/BBBLE",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lbulenapps.HeartChart-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./HeartChart-iOS/Misc/HeartChart_iOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

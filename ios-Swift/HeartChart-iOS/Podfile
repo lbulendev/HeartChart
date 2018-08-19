@@ -2,6 +2,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'HeartChart-iOS' do
+  pod 'Charts', '~> 3.1.1'
   pod 'GoogleSignIn', '~> 4.1.2'
   pod 'FBSDKLoginKit', '~> 4.35.0'
 end
