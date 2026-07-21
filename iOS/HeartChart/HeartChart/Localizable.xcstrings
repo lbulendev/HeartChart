@@ -1,0 +1,1196 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "age_footer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Age sets the target zone and maximum heart rate lines on the chart."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age sets the target zone and maximum heart rate lines on the chart."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age sets the target zone and maximum heart rate lines on the chart."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age sets the target zone and maximum heart rate lines on the chart."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age sets the target zone and maximum heart rate lines on the chart."
+          }
+        }
+      }
+    },
+    "age_section": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your age"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your age"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your age"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your age"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your age"
+          }
+        }
+      }
+    },
+    "age_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Age"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age"
+          }
+        }
+      }
+    },
+    "age_with_value": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Age %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age %lld"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age %lld"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Age %lld"
+          }
+        }
+      }
+    },
+    "app_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HeartChart"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "HeartChart"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "HeartChart"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "HeartChart"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "HeartChart"
+          }
+        }
+      }
+    },
+    "bpm_unit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "BPM"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "BPM"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "BPM"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "BPM"
+          }
+        }
+      }
+    },
+    "bpm_value": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld bpm"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld bpm"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld bpm"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld bpm"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld bpm"
+          }
+        }
+      }
+    },
+    "cancel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cancel"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cancel"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cancel"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "chart_accessibility_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heart rate chart"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Heart rate chart"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Heart rate chart"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Heart rate chart"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Heart rate chart"
+          }
+        }
+      }
+    },
+    "chart_high_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "High %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "High %lld"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "High %lld"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "High %lld"
+          }
+        }
+      }
+    },
+    "chart_low_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Low %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Low %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Low %lld"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Low %lld"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Low %lld"
+          }
+        }
+      }
+    },
+    "chart_max_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max %lld"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max %lld"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max %lld"
+          }
+        }
+      }
+    },
+    "error_connection_failed": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't connect to the sensor."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Couldn't connect to the sensor."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Couldn't connect to the sensor."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Couldn't connect to the sensor."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Couldn't connect to the sensor."
+          }
+        }
+      }
+    },
+    "error_connection_lost": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lost contact with the sensor."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lost contact with the sensor."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lost contact with the sensor."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lost contact with the sensor."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lost contact with the sensor."
+          }
+        }
+      }
+    },
+    "max_heart_rate_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Max heart rate"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max heart rate"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max heart rate"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max heart rate"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Max heart rate"
+          }
+        }
+      }
+    },
+    "pair_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pair"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair"
+          }
+        }
+      }
+    },
+    "pairing_bt_off_message": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on Bluetooth to find your heart rate sensor."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Turn on Bluetooth to find your heart rate sensor."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Turn on Bluetooth to find your heart rate sensor."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Turn on Bluetooth to find your heart rate sensor."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Turn on Bluetooth to find your heart rate sensor."
+          }
+        }
+      }
+    },
+    "pairing_bt_off_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth Is Off"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth Is Off"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth Is Off"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth Is Off"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth Is Off"
+          }
+        }
+      }
+    },
+    "pairing_hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn."
+          }
+        }
+      }
+    },
+    "pairing_searching": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Searching…"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching…"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching…"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching…"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching…"
+          }
+        }
+      }
+    },
+    "pairing_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pair Sensor"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair Sensor"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair Sensor"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair Sensor"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pair Sensor"
+          }
+        }
+      }
+    },
+    "retry": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retry"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Retry"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Retry"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Retry"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Retry"
+          }
+        }
+      }
+    },
+    "save": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Save"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Save"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Save"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Save"
+          }
+        }
+      }
+    },
+    "set_age": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set Age"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Set Age"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Set Age"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Set Age"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Set Age"
+          }
+        }
+      }
+    },
+    "status_bluetooth_off": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth is off"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth is off"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth is off"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth is off"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bluetooth is off"
+          }
+        }
+      }
+    },
+    "status_connected": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected to %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connected to %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connected to %@"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connected to %@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connected to %@"
+          }
+        }
+      }
+    },
+    "status_connecting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting to %@…"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connecting to %@…"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connecting to %@…"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connecting to %@…"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Connecting to %@…"
+          }
+        }
+      }
+    },
+    "status_not_paired": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No sensor paired — tap Pair to find your Polar H9"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No sensor paired — tap Pair to find your Polar H9"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No sensor paired — tap Pair to find your Polar H9"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No sensor paired — tap Pair to find your Polar H9"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No sensor paired — tap Pair to find your Polar H9"
+          }
+        }
+      }
+    },
+    "status_reconnecting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sensor out of range — reconnecting…"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sensor out of range — reconnecting…"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sensor out of range — reconnecting…"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sensor out of range — reconnecting…"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sensor out of range — reconnecting…"
+          }
+        }
+      }
+    },
+    "status_searching": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Searching for sensors…"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching for sensors…"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching for sensors…"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching for sensors…"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Searching for sensors…"
+          }
+        }
+      }
+    },
+    "target_zone_label": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Target zone"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Target zone"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Target zone"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Target zone"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Target zone"
+          }
+        }
+      }
+    },
+    "unpair_button": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpair"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair"
+          }
+        }
+      }
+    },
+    "unpair_confirm_title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpair this sensor?"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair this sensor?"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair this sensor?"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair this sensor?"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Unpair this sensor?"
+          }
+        }
+      }
+    },
+    "zone_range_value": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld–%lld bpm"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld–%lld bpm"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld–%lld bpm"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld–%lld bpm"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%lld–%lld bpm"
+          }
+        }
+      }
+    },
+    "zones_section": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your zones"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your zones"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your zones"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your zones"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Your zones"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

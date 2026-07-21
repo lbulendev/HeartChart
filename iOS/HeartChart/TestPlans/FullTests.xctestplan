@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "BCD20300-0000-4000-8000-000000000001",
+      "name" : "Default",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:HeartChart.xcodeproj",
+        "identifier" : "BCD20326301015D4004CBB08",
+        "name" : "HeartChartTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:HeartChart.xcodeproj",
+        "identifier" : "BCD20330301015D4004CBB08",
+        "name" : "HeartChartUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
