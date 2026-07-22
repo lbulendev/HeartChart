@@ -1,7 +1,9 @@
 package com.curiousbeagle.android.heartchart
 
 import com.curiousbeagle.android.heartchart.bluetooth.HeartRateMonitor
+import com.curiousbeagle.android.heartchart.data.HeartRateSample
 import com.curiousbeagle.android.heartchart.data.HeartRateZones
+import com.curiousbeagle.android.heartchart.data.segments
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
@@ -211,6 +213,42 @@ class RegressionTest {
 
             assertEquals(102, monitor.currentHeartRate.value)
             assertEquals(listOf(70, 102), monitor.samples.value.map { it.bpm })
+        }
+
+        // An unworn strap reports 0 bpm — that must become a chart GAP
+        // (no sample) and a "--" reading, never a line dropping to zero.
+        @Test
+        fun `zero readings become gaps, not zero points`() = runTest {
+            val monitor = makeMonitor(this)
+            monitor.record(72)
+            monitor.record(0)
+
+            assertNull(monitor.currentHeartRate.value)
+            assertEquals(listOf(72), monitor.samples.value.map { it.bpm })
+
+            monitor.record(80)
+            assertEquals(80, monitor.currentHeartRate.value)
+            assertEquals(listOf(72, 80), monitor.samples.value.map { it.bpm })
+        }
+
+        // The chart breaks the line where samples are separated by more
+        // than the gap threshold (sensor outage), and never interpolates
+        // across the silence.
+        @Test
+        fun `samples split into runs at silences longer than the gap`() {
+            val base = 1_000_000L
+            val samples = listOf(
+                HeartRateSample(base, 70),
+                HeartRateSample(base + 1_000, 72),
+                HeartRateSample(base + 20_000, 75),
+                HeartRateSample(base + 21_000, 76),
+            )
+
+            val segments = samples.segments(gapMillis = 5_000)
+
+            assertEquals(2, segments.size)
+            assertEquals(listOf(70, 72), segments[0].map { it.bpm })
+            assertEquals(listOf(75, 76), segments[1].map { it.bpm })
         }
     }
 }

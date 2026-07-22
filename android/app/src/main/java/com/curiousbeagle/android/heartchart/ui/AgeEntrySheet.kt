@@ -2,14 +2,15 @@ package com.curiousbeagle.android.heartchart.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -42,15 +43,24 @@ fun AgeEntrySheet(
     }
 }
 
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 fun AgeEntryContent(
     initialAge: Int,
     onSave: (Int) -> Unit,
 ) {
-    var selectedAge by remember {
-        mutableIntStateOf(if (initialAge in HeartRateZones.validAges) initialAge else 45)
+    // Selection is a whole bracket from the published table; its first age
+    // is what persists, so previously stored exact ages still resolve.
+    var selectedBracketStart by remember {
+        mutableIntStateOf(
+            if (initialAge in HeartRateZones.validAges) {
+                HeartRateZones(initialAge).bracket.ages.first
+            } else {
+                45
+            }
+        )
     }
-    val zones = HeartRateZones(selectedAge)
+    val zones = HeartRateZones(selectedBracketStart)
 
     Column(
         modifier = Modifier
@@ -63,19 +73,14 @@ fun AgeEntryContent(
             stringResource(R.string.age_section),
             style = MaterialTheme.typography.titleMedium,
         )
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            Text(
-                "$selectedAge",
-                style = MaterialTheme.typography.displaySmall,
-            )
-            Slider(
-                value = selectedAge.toFloat(),
-                onValueChange = { selectedAge = it.toInt() },
-                valueRange = HeartRateZones.validAges.first.toFloat()..HeartRateZones.validAges.last.toFloat(),
-            )
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            HeartRateZones.brackets.forEach { bracket ->
+                FilterChip(
+                    selected = bracket.ages.first == selectedBracketStart,
+                    onClick = { selectedBracketStart = bracket.ages.first },
+                    label = { Text(HeartRateZones.labelFor(bracket)) },
+                )
+            }
         }
         Text(
             stringResource(R.string.age_footer),
@@ -97,7 +102,7 @@ fun AgeEntryContent(
         )
 
         Button(
-            onClick = { onSave(selectedAge) },
+            onClick = { onSave(selectedBracketStart) },
             modifier = Modifier.fillMaxWidth(),
         ) {
             Text(stringResource(R.string.save))

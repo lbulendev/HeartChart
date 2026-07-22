@@ -142,6 +142,12 @@ class HeartRateMonitor(
     // MARK: Measurements
 
     fun record(bpm: Int, now: Long = System.currentTimeMillis()) {
+        // The sensor reports 0 when it loses skin contact — that's an
+        // outage, not a reading. No sample means the chart shows a gap.
+        if (bpm <= 0) {
+            _currentHeartRate.value = null
+            return
+        }
         _currentHeartRate.value = bpm
         _samples.value = _samples.value + HeartRateSample(date = now, bpm = bpm)
         trimSamples(now)
