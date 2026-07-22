@@ -8,11 +8,13 @@ in ~/.claude/CLAUDE.md apply; specifics below.
 
 ## Build & test
 
-iOS — deployment target is iOS 27, so tests need the iOS 27.0 simulator:
+iOS — deployment target is iOS 26.0 (lowered from the template's 27 so
+Larry's iPhone 13 on 26.5.x is an eligible destination); either the 26.5
+or 27.0 simulator works — prefer 26.5 (the 27.0 sim wedges on diagnostics):
 
 ```sh
 cd iOS/HeartChart && xcodebuild test -project HeartChart.xcodeproj \
-  -scheme HeartChart -destination "id=556B0C84-C791-4E30-8810-61AF9AEBB917" \
+  -scheme HeartChart -destination "id=6C8E1CF5-5CBE-45B4-9453-0E5588BD274F" \
   -only-testing:HeartChartTests
 # Smoke only (CLI): -only-testing:HeartChartTests/SmokeTests
 ```
@@ -30,12 +32,13 @@ cd android && JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/
 
 - The current apps need NO API keys — BLE is the only data source. Keep it
   that way unless a feature genuinely requires one.
-- INCIDENT (July 2026): Google flagged a publicly accessible API key for
-  GCP project heartchart-ios, hardcoded as `GoogleOauthKey` in the legacy
-  app's `ios-Swift/HeartChart-iOS/.../Misc/Constants.swift` — deleted from
-  the working tree but permanently in the public repo's git history. That
-  key must stay revoked in Google Cloud Console; never re-add it or any
-  hardcoded key.
+- INCIDENT (July 2026, RESOLVED): Google flagged a publicly accessible API
+  key for GCP project heartchart-ios, hardcoded as `GoogleOauthKey` in the
+  legacy app's `ios-Swift/HeartChart-iOS/.../Misc/Constants.swift`.
+  Resolution: Larry deleted the entire heartchart-ios GCP project on
+  July 21, 2026, revoking all its credentials — the key string still
+  visible in the public repo's git history is permanently inert. Never
+  re-add it or any hardcoded key.
 - If a key ever becomes necessary, follow the TheMovieDBSwift pattern
   exactly: the key enters as an environment variable — iOS via git-ignored
   `Secrets.xcconfig` (`SETTING = $(ENV_VAR)`) → Info.plist → Bundle;

@@ -37,7 +37,7 @@ iOS/HeartChart/HeartChart/          android/app/src/main/java/...
 - A Bluetooth LE heart-rate strap (Polar H9/H10, Garmin, Wahoo, …) and a physical device — neither the iOS simulator nor the Android emulator has Bluetooth
 
 **iOS (`iOS/`) — Xcode / Swift**
-- Xcode 27, iOS 27 deployment target
+- Xcode 27, iOS 26.0 deployment target (runs on iOS 26.x devices — e.g. an iPhone 13 on 26.5)
 
 **Android (`android/`) — Android Studio / Kotlin**
 - Android Studio (AGP 9.3, Kotlin 2.2, Gradle 9.5 via the wrapper), JDK 21 (the Studio-bundled runtime works)
