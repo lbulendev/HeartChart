@@ -5,28 +5,37 @@
 
 import SwiftUI
 
-/// Collects the user's age, which drives every zone line on the chart.
-/// Shown automatically on first launch and editable any time after.
+/// Collects the user's age bracket, which drives every zone line on the
+/// chart. The picker offers the published table's rows as whole ranges
+/// ("6–12", "13–19", "20" … "70"); the bracket's first age is what
+/// persists, so previously stored exact ages still resolve.
 struct AgeEntryView: View {
     @Binding var age: Int
     @Environment(\.dismiss) private var dismiss
 
-    @State private var selectedAge: Int
+    @State private var selectedBracketStart: Int
 
     init(age: Binding<Int>) {
         _age = age
-        _selectedAge = State(initialValue: HeartRateZones.validAges.contains(age.wrappedValue) ? age.wrappedValue : 45)
+        let current = age.wrappedValue
+        let start = HeartRateZones.validAges.contains(current)
+            ? HeartRateZones(age: current).bracket.ages.lowerBound
+            : 45
+        _selectedBracketStart = State(initialValue: start)
     }
 
-    private var zones: HeartRateZones { HeartRateZones(age: selectedAge) }
+    private var zones: HeartRateZones { HeartRateZones(age: selectedBracketStart) }
 
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    Picker(String(localized: "age_title", defaultValue: "Age"), selection: $selectedAge) {
-                        ForEach(HeartRateZones.validAges, id: \.self) { value in
-                            Text("\(value)").tag(value)
+                    Picker(
+                        String(localized: "age_title", defaultValue: "Age"),
+                        selection: $selectedBracketStart
+                    ) {
+                        ForEach(HeartRateZones.brackets, id: \.ages.lowerBound) { bracket in
+                            Text(HeartRateZones.label(for: bracket)).tag(bracket.ages.lowerBound)
                         }
                     }
                     .pickerStyle(.wheel)
@@ -55,7 +64,7 @@ struct AgeEntryView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(String(localized: "save", defaultValue: "Save")) {
-                        age = selectedAge
+                        age = selectedBracketStart
                         dismiss()
                     }
                 }
@@ -67,6 +76,10 @@ struct AgeEntryView: View {
 #if DEBUG
 #Preview {
     AgeEntryView(age: .constant(45))
+}
+
+#Preview("Youth bracket") {
+    AgeEntryView(age: .constant(9))
 }
 
 #Preview("Small iPhone") {

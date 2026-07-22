@@ -46,7 +46,7 @@ struct ContentView: View {
                     } label: {
                         Label(
                             hasAge
-                                ? String(localized: "age_with_value", defaultValue: "Age \(age)")
+                                ? String(localized: "age_with_value", defaultValue: "Age \(zones.bracketLabel)")
                                 : String(localized: "set_age", defaultValue: "Set Age"),
                             systemImage: "person.crop.circle"
                         )

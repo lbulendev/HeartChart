@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">HeartChart</string>
     <string name="app_title">HeartChart</string>
-    <string name="age_with_value">Age %1$d</string>
+    <string name="age_with_value">Age %1$s</string>
     <string name="set_age">Set Age</string>
     <string name="pair_button">Pair</string>
     <string name="unpair_button">Unpair</string>

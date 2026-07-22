@@ -128,8 +128,14 @@ fun MainScreen(
                     TextButton(onClick = onShowAgeEntry) {
                         Icon(Icons.Filled.Person, contentDescription = null)
                         Text(
-                            if (hasAge) stringResource(R.string.age_with_value, age)
-                            else stringResource(R.string.set_age)
+                            if (hasAge) {
+                                stringResource(
+                                    R.string.age_with_value,
+                                    HeartRateZones(age).bracketLabel,
+                                )
+                            } else {
+                                stringResource(R.string.set_age)
+                            }
                         )
                     }
                     if (isPaired) {

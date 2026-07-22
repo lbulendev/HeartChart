@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.curiousbeagle.android.heartchart.R
 import com.curiousbeagle.android.heartchart.data.HeartRateSample
 import com.curiousbeagle.android.heartchart.data.HeartRateZones
+import com.curiousbeagle.android.heartchart.data.segments
 import com.curiousbeagle.android.heartchart.ui.theme.HeartChartTheme
 import kotlin.math.sin
 
@@ -45,9 +46,11 @@ fun HeartRateChart(
     windowMillis: Long = 3 * 60 * 1000,
 ) {
     val textMeasurer = rememberTextMeasurer()
-    val lineColor = MaterialTheme.colorScheme.primary
+    // Teal: clearly distinct from the red zone/max rules in light and dark.
+    val lineColor = Color(0xFF00897B)
     val labelStyle = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.SemiBold, color = Color.Red)
     val axisColor = MaterialTheme.colorScheme.onSurfaceVariant
+    val gridColor = MaterialTheme.colorScheme.outlineVariant
 
     val lowLabel = stringResource(R.string.chart_low_label, zones.targetLow)
     val highLabel = stringResource(R.string.chart_high_label, zones.targetHigh)
@@ -62,10 +65,20 @@ fun HeartRateChart(
             .padding(8.dp)
             .semantics { contentDescription = chartDescription }
     ) {
-        val minBpm = minOf(40, (samples.minOfOrNull { it.bpm } ?: 60) - 10)
-        val maxBpm = zones.maxHeartRate + 15
+        val minBpm = zones.chartFloor
+        val maxBpm = zones.chartCeiling
         val bpmRange = (maxBpm - minBpm).toFloat()
         fun yFor(bpm: Int): Float = size.height * (1f - (bpm - minBpm) / bpmRange)
+
+        // Round-number gridlines across the whole domain (see axisTicks).
+        val axisStyle = TextStyle(fontSize = 9.sp, color = axisColor)
+        zones.axisTicks.forEach { value ->
+            drawRule(yFor(value), gridColor)
+            drawText(
+                textMeasurer.measure("$value", axisStyle),
+                topLeft = Offset(0f, (yFor(value) - 12f).coerceAtLeast(0f)),
+            )
+        }
 
         // Zone rules: solid red low/high, dashed red max — with labels.
         drawRule(yFor(zones.targetLow), Color.Red)
@@ -78,30 +91,22 @@ fun HeartRateChart(
         drawLabel(textMeasurer, highLabel, yFor(zones.targetHigh), labelStyle)
         drawLabel(textMeasurer, maxLabel, yFor(zones.maxHeartRate), labelStyle)
 
-        // The heart rate line over the time window ending now.
+        // The heart rate line over the time window ending now. Contiguous
+        // runs draw as separate paths, so a sensor outage (strap off)
+        // renders as a gap instead of a line across it.
         if (samples.size >= 2) {
             val end = samples.maxOf { it.date }
             val start = end - windowMillis
-            val path = Path()
-            samples.filter { it.date >= start }.forEachIndexed { index, sample ->
-                val x = size.width * (sample.date - start).toFloat() / windowMillis.toFloat()
-                val y = yFor(sample.bpm)
-                if (index == 0) path.moveTo(x, y) else path.lineTo(x, y)
+            val strokeWidth = with(density) { 2.dp.toPx() }
+            samples.filter { it.date >= start }.segments().forEach { segment ->
+                val path = Path()
+                segment.forEachIndexed { index, sample ->
+                    val x = size.width * (sample.date - start).toFloat() / windowMillis.toFloat()
+                    val y = yFor(sample.bpm)
+                    if (index == 0) path.moveTo(x, y) else path.lineTo(x, y)
+                }
+                drawPath(path, color = lineColor, style = Stroke(width = strokeWidth))
             }
-            drawPath(
-                path,
-                color = lineColor,
-                style = Stroke(width = with(density) { 2.dp.toPx() })
-            )
-        }
-
-        // Minimal y-axis reference labels.
-        val axisStyle = TextStyle(fontSize = 9.sp, color = axisColor)
-        listOf(minBpm, (minBpm + maxBpm) / 2).forEach { bpm ->
-            drawText(
-                textMeasurer.measure("$bpm", axisStyle),
-                topLeft = Offset(0f, (yFor(bpm) - 12f).coerceAtLeast(0f)),
-            )
         }
     }
 }

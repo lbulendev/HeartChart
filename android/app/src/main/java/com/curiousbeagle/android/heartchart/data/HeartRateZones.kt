@@ -13,6 +13,9 @@ data class HeartRateZones(val age: Int) {
 
     data class Bracket(val ages: IntRange, val low: Int, val high: Int, val max: Int)
 
+    /** The display label for this age's bracket. */
+    val bracketLabel: String get() = labelFor(bracket)
+
     /**
      * Containing range first; otherwise nearest by distance to the range.
      * minByOrNull keeps the earlier element on ties, so equidistant ages
@@ -36,6 +39,41 @@ data class HeartRateZones(val age: Int) {
     /** Top of the target zone. */
     val targetHigh: Int get() = bracket.high
 
+    // Chart scale
+
+    /** The chart's y-domain: 20 bpm of margin beyond the zone lines. */
+    val chartFloor: Int get() = targetLow - 20
+    val chartCeiling: Int get() = maxHeartRate + 20
+
+    /**
+     * Gridline spacing between low and max: the smallest of 10/15/20 that
+     * keeps the line count readable (≤ 7 intervals).
+     */
+    val axisStride: Int
+        get() {
+            val range = maxHeartRate - targetLow
+            return listOf(10, 15, 20).firstOrNull { step ->
+                (range + step - 1) / step <= 7
+            } ?: 20
+        }
+
+    /**
+     * Gridline values across the chart domain, anchored on round numbers:
+     * multiples of the stride (so every label ends in 0 or 5 — 140/145,
+     * never 143), from the first multiple above the floor to the ceiling.
+     */
+    val axisTicks: List<Int>
+        get() {
+            val step = axisStride
+            var tick = ((chartFloor + step - 1) / step) * step
+            val ticks = mutableListOf<Int>()
+            while (tick <= chartCeiling) {
+                ticks.add(tick)
+                tick += step
+            }
+            return ticks
+        }
+
     companion object {
         /** The published age table, ascending and non-overlapping. */
         val brackets = listOf(
@@ -55,6 +93,23 @@ data class HeartRateZones(val age: Int) {
 
         /** Ages outside this range make the published table meaningless. */
         val validAges = 6..100
+
+        /**
+         * The full age span a bracket covers, as shown in the picker:
+         * explicit range rows read as-is ("6–12"); single-age rows extend
+         * to the next row's start ("20–29", "45–49"); the last row is
+         * open-ended ("70+").
+         */
+        fun labelFor(bracket: Bracket): String {
+            if (bracket.ages.first != bracket.ages.last) {
+                return "${bracket.ages.first}–${bracket.ages.last}"
+            }
+            val index = brackets.indexOf(bracket)
+            if (index == -1 || index + 1 >= brackets.size) {
+                return "${bracket.ages.first}+"
+            }
+            return "${bracket.ages.first}–${brackets[index + 1].ages.first - 1}"
+        }
     }
 }
 
@@ -65,3 +120,21 @@ data class HeartRateSample(
     /** Unique identity for list/chart keys — two readings can share a timestamp. */
     val id: UUID = UUID.randomUUID(),
 )
+
+/**
+ * Splits samples into contiguous runs: a silence longer than [gapMillis]
+ * (strap off, no skin contact) starts a new run, so the chart draws a
+ * break instead of a line across the outage.
+ */
+fun List<HeartRateSample>.segments(gapMillis: Long = 5_000): List<List<HeartRateSample>> {
+    val result = mutableListOf<MutableList<HeartRateSample>>()
+    for (sample in this) {
+        val last = result.lastOrNull()?.lastOrNull()
+        if (last != null && sample.date - last.date <= gapMillis) {
+            result.last().add(sample)
+        } else {
+            result.add(mutableListOf(sample))
+        }
+    }
+    return result
+}

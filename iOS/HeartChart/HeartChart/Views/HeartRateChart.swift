@@ -13,20 +13,20 @@ struct HeartRateChart: View {
     let samples: [HeartRateSample]
     let zones: HeartRateZones
 
-    private var yDomain: ClosedRange<Int> {
-        let low = min(40, (samples.map(\.bpm).min() ?? 60) - 10)
-        return low...(zones.maxHeartRate + 15)
-    }
-
     var body: some View {
         Chart {
-            ForEach(samples) { sample in
-                LineMark(
-                    x: .value("Time", sample.date),
-                    y: .value("BPM", sample.bpm)
-                )
-                .foregroundStyle(.blue)
-                .interpolationMethod(.monotone)
+            // Contiguous runs draw as separate series, so a sensor outage
+            // (strap off) renders as a gap instead of a line across it.
+            ForEach(Array(HeartRateSample.segments(of: samples).enumerated()), id: \.offset) { index, segment in
+                ForEach(segment) { sample in
+                    LineMark(
+                        x: .value("Time", sample.date),
+                        y: .value("BPM", sample.bpm),
+                        series: .value("Run", index)
+                    )
+                    .foregroundStyle(.teal)
+                    .interpolationMethod(.monotone)
+                }
             }
 
             RuleMark(y: .value("Zone low", zones.targetLow))
@@ -48,7 +48,14 @@ struct HeartRateChart: View {
                     zoneLabel(String(localized: "chart_max_label", defaultValue: "Max \(zones.maxHeartRate)"))
                 }
         }
-        .chartYScale(domain: yDomain)
+        .chartYScale(domain: zones.chartFloor...zones.chartCeiling)
+        .chartYAxis {
+            // Round-number gridlines across the whole domain (see axisTicks).
+            AxisMarks(values: zones.axisTicks) { _ in
+                AxisGridLine()
+                AxisValueLabel()
+            }
+        }
         .chartYAxisLabel(String(localized: "bpm_unit", defaultValue: "BPM"))
         .chartXAxis {
             AxisMarks(values: .automatic(desiredCount: 4)) { _ in

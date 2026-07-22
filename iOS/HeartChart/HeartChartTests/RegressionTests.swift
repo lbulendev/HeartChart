@@ -148,6 +148,42 @@ struct RegressionTests {
             #expect(monitor.samples.map(\.bpm) == [70, 102])
         }
 
+        // An unworn strap reports 0 bpm — that must become a chart GAP
+        // (no sample) and a "--" reading, never a line dropping to zero.
+        @Test("Zero readings become gaps, not zero points")
+        func zeroReadingsBecomeGaps() {
+            let monitor = makeMonitor()
+            monitor.record(72)
+            monitor.record(0)
+
+            #expect(monitor.currentHeartRate == nil)
+            #expect(monitor.samples.map(\.bpm) == [72])
+
+            monitor.record(80)
+            #expect(monitor.currentHeartRate == 80)
+            #expect(monitor.samples.map(\.bpm) == [72, 80])
+        }
+
+        // The chart breaks the line where samples are separated by more
+        // than the gap threshold (sensor outage), and never interpolates
+        // across the silence.
+        @Test("Samples split into runs at silences longer than the gap")
+        func samplesSegmentAtGaps() {
+            let base = Date.now
+            let samples = [
+                HeartRateSample(date: base, bpm: 70),
+                HeartRateSample(date: base.addingTimeInterval(1), bpm: 72),
+                HeartRateSample(date: base.addingTimeInterval(20), bpm: 75),
+                HeartRateSample(date: base.addingTimeInterval(21), bpm: 76),
+            ]
+
+            let segments = HeartRateSample.segments(of: samples, gap: 5)
+
+            #expect(segments.count == 2)
+            #expect(segments[0].map(\.bpm) == [70, 72])
+            #expect(segments[1].map(\.bpm) == [75, 76])
+        }
+
         // A dropped connection must raise the red banner (with its
         // category), not just quietly flip the footer text.
         @Test("Losing contact while paired raises the connection-lost banner")

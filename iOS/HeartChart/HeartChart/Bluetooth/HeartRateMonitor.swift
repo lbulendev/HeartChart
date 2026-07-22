@@ -185,6 +185,12 @@ final class HeartRateMonitor: NSObject {
 
     // Internal (not private) so tests can drive samples without Bluetooth.
     func record(_ bpm: Int) {
+        // The sensor reports 0 when it loses skin contact — that's an
+        // outage, not a reading. No sample means the chart shows a gap.
+        guard bpm > 0 else {
+            currentHeartRate = nil
+            return
+        }
         currentHeartRate = bpm
         samples.append(HeartRateSample(date: .now, bpm: bpm))
         trimSamples(now: .now)

@@ -34,6 +34,54 @@ class SanityTest {
             assertFalse(101 in HeartRateZones.validAges)
         }
 
+        // The chart's y-domain is the zone lines plus 20 bpm of margin —
+        // never down to zero — with gridlines at a readable stride.
+        @Test
+        fun `chart scale spans low-20 to max+20 with a readable stride`() {
+            val adult = HeartRateZones(age = 45)   // low→max span 87 → stride 15
+            assertEquals(68, adult.chartFloor)
+            assertEquals(195, adult.chartCeiling)
+            assertEquals(15, adult.axisStride)
+
+            val twenty = HeartRateZones(age = 20)  // span 100 → stride 15
+            assertEquals(15, twenty.axisStride)
+
+            val child = HeartRateZones(age = 8)    // span 150 → stride 20
+            assertEquals(50, child.chartFloor)
+            assertEquals(240, child.chartCeiling)
+            assertEquals(20, child.axisStride)
+        }
+
+        // Gridline labels must land on round numbers (140/145, never 143):
+        // every tick is a multiple of the stride, inside the domain.
+        @Test
+        fun `axis ticks land on round numbers within the domain`() {
+            val fiftyFive = HeartRateZones(age = 55)  // floor 63, ceiling 185, stride 15
+            assertEquals(listOf(75, 90, 105, 120, 135, 150, 165, 180), fiftyFive.axisTicks)
+
+            val child = HeartRateZones(age = 8)       // floor 50, ceiling 240, stride 20
+            assertEquals(60, child.axisTicks.first())
+            assertEquals(240, child.axisTicks.last())
+
+            listOf(fiftyFive, child, HeartRateZones(age = 20)).forEach { zones ->
+                zones.axisTicks.forEach { tick ->
+                    assertEquals(0, tick % 5)
+                    assertTrue(tick >= zones.chartFloor && tick <= zones.chartCeiling)
+                }
+            }
+        }
+
+        // Picker labels show each bracket's full covered span: single-age
+        // rows extend to the next row's start; the last row is open-ended.
+        @Test
+        fun `bracket labels render full covered ranges`() {
+            assertEquals("6–12", HeartRateZones(age = 8).bracketLabel)
+            assertEquals("20–29", HeartRateZones(age = 20).bracketLabel)
+            assertEquals("45–49", HeartRateZones(age = 45).bracketLabel)
+            assertEquals("65–69", HeartRateZones(age = 65).bracketLabel)
+            assertEquals("70+", HeartRateZones(age = 80).bracketLabel)
+        }
+
         // The bracket lookup assumes an ascending, non-overlapping table;
         // a careless row edit would silently skew every match.
         @Test
