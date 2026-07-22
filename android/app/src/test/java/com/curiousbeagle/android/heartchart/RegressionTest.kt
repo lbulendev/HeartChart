@@ -27,13 +27,46 @@ class RegressionTest {
     inner class Zones {
         // The published table the chart's red lines must match, verbatim.
         @ParameterizedTest(name = "{0} years")
-        @CsvSource("45, 88, 149, 175", "50, 85, 145, 170", "55, 83, 140, 165")
+        @CsvSource(
+            "8, 70, 110, 220",
+            "16, 60, 100, 220",
+            "20, 100, 170, 200",
+            "30, 95, 162, 190",
+            "35, 93, 157, 185",
+            "40, 90, 153, 180",
+            "45, 88, 149, 175",
+            "50, 85, 145, 170",
+            "55, 83, 140, 165",
+            "60, 80, 136, 160",
+            "65, 78, 132, 155",
+            "70, 75, 128, 150",
+            )
         fun `zones match the published age table`(age: Int, low: Int, high: Int, max: Int) {
             val zones = HeartRateZones(age)
 
             assertEquals(low, zones.targetLow)
             assertEquals(high, zones.targetHigh)
             assertEquals(max, zones.maxHeartRate)
+        }
+
+        // A containing range wins outright; other ages snap to the NEAREST
+        // bracket — never interpolate — with ties going to the younger one.
+        @ParameterizedTest(name = "{0} → bracket starting {1}")
+        @CsvSource(
+            "6, 6",     // youth range boundaries
+            "12, 6",
+            "13, 13",
+            "19, 13",
+            "24, 20",
+            "27, 30",
+            "25, 20",   // tie → younger
+            "33, 35",
+            "68, 70",
+            "5, 6",     // below the table clamps up
+            "100, 70",  // above the table clamps down
+        )
+        fun `ages resolve to the containing or nearest bracket`(age: Int, bracketStart: Int) {
+            assertEquals(bracketStart, HeartRateZones(age).bracket.ages.first)
         }
     }
 

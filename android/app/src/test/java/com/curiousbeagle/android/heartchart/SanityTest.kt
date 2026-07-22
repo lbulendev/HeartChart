@@ -26,20 +26,23 @@ class SanityTest {
     @Tag("zones")
     inner class Zones {
         @Test
-        fun `the valid age range covers adults and rejects nonsense`() {
+        fun `the valid age range covers children through seniors, rejects nonsense`() {
+            assertTrue(6 in HeartRateZones.validAges)
             assertTrue(45 in HeartRateZones.validAges)
-            assertTrue(10 in HeartRateZones.validAges)
             assertTrue(100 in HeartRateZones.validAges)
-            assertFalse(0 in HeartRateZones.validAges)
+            assertFalse(5 in HeartRateZones.validAges)
             assertFalse(101 in HeartRateZones.validAges)
         }
 
+        // The bracket lookup assumes an ascending, non-overlapping table;
+        // a careless row edit would silently skew every match.
         @Test
-        fun `zone bounds round half-up like the published table`() {
-            // 55y: 50% of 165 is 82.5 → 83; 85% is 140.25 → 140.
-            val zones = HeartRateZones(age = 55)
-            assertEquals(83, zones.targetLow)
-            assertEquals(140, zones.targetHigh)
+        fun `the bracket table is ascending and non-overlapping`() {
+            val brackets = HeartRateZones.brackets
+            assertEquals(12, brackets.size)
+            brackets.zipWithNext().forEach { (earlier, later) ->
+                assertTrue(earlier.ages.last < later.ages.first)
+            }
         }
     }
 

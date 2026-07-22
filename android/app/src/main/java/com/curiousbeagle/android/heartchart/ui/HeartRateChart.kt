@@ -21,6 +21,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -150,5 +151,21 @@ private fun HeartRateChartPreview() {
 private fun HeartRateChartEmptyPreview() {
     HeartChartTheme {
         HeartRateChart(samples = emptyList(), zones = HeartRateZones(age = 55))
+    }
+}
+
+@Preview(name = "Small phone", showBackground = true, device = "spec:width=320dp,height=568dp,dpi=320")
+@Composable
+private fun HeartRateChartSmallPreview() {
+    HeartChartTheme {
+        HeartRateChart(samples = previewSamples(), zones = HeartRateZones(age = 45))
+    }
+}
+
+@Preview(name = "Tablet", showBackground = true, device = Devices.TABLET)
+@Composable
+private fun HeartRateChartTabletPreview() {
+    HeartChartTheme {
+        HeartRateChart(samples = previewSamples(), zones = HeartRateZones(age = 50))
     }
 }

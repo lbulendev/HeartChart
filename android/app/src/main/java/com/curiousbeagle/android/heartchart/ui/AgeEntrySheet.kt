@@ -19,6 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.curiousbeagle.android.heartchart.R
@@ -117,5 +118,21 @@ private fun LabeledRow(label: String, value: String) {
 private fun AgeEntryPreview() {
     HeartChartTheme {
         AgeEntryContent(initialAge = 45, onSave = {})
+    }
+}
+
+@Preview(name = "Small phone", showBackground = true, device = "spec:width=320dp,height=568dp,dpi=320")
+@Composable
+private fun AgeEntrySmallPreview() {
+    HeartChartTheme {
+        AgeEntryContent(initialAge = 45, onSave = {})
+    }
+}
+
+@Preview(name = "Tablet", showBackground = true, device = Devices.TABLET)
+@Composable
+private fun AgeEntryTabletPreview() {
+    HeartChartTheme {
+        AgeEntryContent(initialAge = 55, onSave = {})
     }
 }

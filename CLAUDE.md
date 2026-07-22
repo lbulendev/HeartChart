@@ -26,6 +26,22 @@ cd android && JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/
   # -PincludeTags=smoke                     # SmokeTests plan (TestPlans.md)
 ```
 
+## Secrets — NO publicly available API keys (iOS and Android)
+
+- The current apps need NO API keys — BLE is the only data source. Keep it
+  that way unless a feature genuinely requires one.
+- INCIDENT (July 2026): Google flagged a publicly accessible API key for
+  GCP project heartchart-ios, hardcoded as `GoogleOauthKey` in the legacy
+  app's `ios-Swift/HeartChart-iOS/.../Misc/Constants.swift` — deleted from
+  the working tree but permanently in the public repo's git history. That
+  key must stay revoked in Google Cloud Console; never re-add it or any
+  hardcoded key.
+- If a key ever becomes necessary, follow the TheMovieDBSwift pattern
+  exactly: the key enters as an environment variable — iOS via git-ignored
+  `Secrets.xcconfig` (`SETTING = $(ENV_VAR)`) → Info.plist → Bundle;
+  Android via git-ignored `local.properties` with an env-var fallback →
+  BuildConfig — and the app fails fast at launch when it's missing.
+
 ## Project notes
 
 - Modern pbxproj with synchronized folder groups — moving/adding files on
@@ -38,10 +54,15 @@ cd android && JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/
   none). H9 R-R intervals arrive in 2A37 (flag bit 4, 1/1024s units) and are
   currently discarded — the parser tolerates them; an HRV feature would
   parse them.
-- Zone math: max = 220 − age; target zone 50–85% of max, `.rounded()`
-  (half-up). The published table (45→88/149/175, 50→85/145/170,
-  55→83/140/165) is pinned by regression tests — don't change the formula
-  without updating the table test.
+- Zone values come from the published 12-row age table: youth RANGES
+  (6-12→70-110/220, 13-19→60-100/220) plus single-age adult rows
+  (20→100-170/200 … 70→75-128/150). Lookup: a containing range wins;
+  otherwise nearest bracket by distance to its range — a 27-year-old gets
+  the 30-year row; ties snap to the younger bracket; ages outside the
+  table clamp to the end rows. No formula, no interpolation. The full
+  table, boundaries, and snapping are pinned by regression tests on BOTH
+  platforms — keep the two `brackets` tables identical. validAges is
+  6...100.
 - Connection lifecycle goes through internal `handleConnected` /
   `handleDisconnection` / `handleConnectionFailure` on HeartRateMonitor so
   banner behavior is testable without CoreBluetooth objects. Unpair and

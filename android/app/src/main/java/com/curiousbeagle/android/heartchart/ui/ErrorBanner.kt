@@ -78,3 +78,11 @@ private fun ErrorBannerPreview() {
         ErrorBanner(HeartRateMonitor.SensorError.CONNECTION_LOST) {}
     }
 }
+
+@Preview(name = "Connect failed", showBackground = true)
+@Composable
+private fun ErrorBannerFailedPreview() {
+    HeartChartTheme {
+        ErrorBanner(HeartRateMonitor.SensorError.CONNECTION_FAILED) {}
+    }
+}

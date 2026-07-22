@@ -14,21 +14,24 @@ struct SanityTests {
 
     @Suite("Zones", .tags(.zones))
     struct Zones {
-        @Test("The valid age range covers adults and rejects nonsense")
+        @Test("The valid age range covers children through seniors, rejects nonsense")
         func validAgeRange() {
+            #expect(HeartRateZones.validAges.contains(6))
             #expect(HeartRateZones.validAges.contains(45))
-            #expect(HeartRateZones.validAges.contains(10))
             #expect(HeartRateZones.validAges.contains(100))
-            #expect(!HeartRateZones.validAges.contains(0))
+            #expect(!HeartRateZones.validAges.contains(5))
             #expect(!HeartRateZones.validAges.contains(101))
         }
 
-        @Test("Zone bounds round half-up like the published table")
-        func roundsHalfUp() {
-            // 55y: 50% of 165 is 82.5 → 83; 85% is 140.25 → 140.
-            let zones = HeartRateZones(age: 55)
-            #expect(zones.targetLow == 83)
-            #expect(zones.targetHigh == 140)
+        // The bracket lookup assumes an ascending, non-overlapping table;
+        // a careless row edit would silently skew every match.
+        @Test("The bracket table is ascending and non-overlapping")
+        func bracketTableIsOrdered() {
+            let brackets = HeartRateZones.brackets
+            #expect(brackets.count == 12)
+            for (earlier, later) in zip(brackets, brackets.dropFirst()) {
+                #expect(earlier.ages.upperBound < later.ages.lowerBound)
+            }
         }
     }
 

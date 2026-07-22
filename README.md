@@ -8,7 +8,7 @@ Live heart-rate charting for Bluetooth LE chest straps (built against the Polar 
 ## Features
 
 - **Live heart rate** — big BPM readout plus a chart of the last 3 minutes, streaming from the sensor about once a second
-- **Age-based zone lines** — enter your age (prompted on first launch, editable any time) and the chart draws two solid red lines at the target zone bounds and a dashed red line at estimated max, using the standard formula: max = 220 − age, zone = 50–85% of max (45y → 88–149, max 175)
+- **Age-based zone lines** — enter your age (prompted on first launch, editable any time) and the chart draws two solid red lines at the target zone bounds and a dashed red line at estimated max, from the published age table covering ages 6–100: youth ranges (6–12 → 70–110, max 220; 13–19 → 60–100, max 220) and adult rows (20y → 100–170, max 200 … 70y → 75–128, max 150), with in-between adult ages snapping to the nearest row
 - **Pair / unpair** — scan for nearby heart-rate sensors, tap to pair, and the app remembers the sensor across launches; unpair forgets it. Reconnection is automatic when the strap comes back in range
 - **Honest failure UX** — a lost connection or failed connect raises a red banner with a friendly message and a Retry button; the banner persists until reconnection succeeds. Raw error text never reaches the screen
 - **Localization scaffolding** — every user-facing string is externalized under a snake_case keyspace shared by both platforms, with placeholder locales for en, en-US, es-US, en-CA, and fr-CA

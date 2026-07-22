@@ -24,9 +24,18 @@ struct RegressionTests {
 
         // The published table the chart's red lines must match, verbatim.
         @Test("Zones match the published age table", arguments: [
+            AgeCase(age: 8, low: 70, high: 110, max: 220),
+            AgeCase(age: 16, low: 60, high: 100, max: 220),
+            AgeCase(age: 20, low: 100, high: 170, max: 200),
+            AgeCase(age: 30, low: 95, high: 162, max: 190),
+            AgeCase(age: 35, low: 93, high: 157, max: 185),
+            AgeCase(age: 40, low: 90, high: 153, max: 180),
             AgeCase(age: 45, low: 88, high: 149, max: 175),
             AgeCase(age: 50, low: 85, high: 145, max: 170),
             AgeCase(age: 55, low: 83, high: 140, max: 165),
+            AgeCase(age: 60, low: 80, high: 136, max: 160),
+            AgeCase(age: 65, low: 78, high: 132, max: 155),
+            AgeCase(age: 70, low: 75, high: 128, max: 150),
         ])
         func zonesMatchTable(testCase: AgeCase) {
             let zones = HeartRateZones(age: testCase.age)
@@ -34,6 +43,31 @@ struct RegressionTests {
             #expect(zones.targetLow == testCase.low)
             #expect(zones.targetHigh == testCase.high)
             #expect(zones.maxHeartRate == testCase.max)
+        }
+
+        struct NearestCase: Sendable, CustomTestStringConvertible {
+            let age: Int
+            let bracketStart: Int
+            var testDescription: String { "\(age) → bracket starting \(bracketStart)" }
+        }
+
+        // A containing range wins outright; other ages snap to the NEAREST
+        // bracket — never interpolate — with ties going to the younger one.
+        @Test("Ages resolve to the containing or nearest bracket", arguments: [
+            NearestCase(age: 6, bracketStart: 6),    // youth range boundaries
+            NearestCase(age: 12, bracketStart: 6),
+            NearestCase(age: 13, bracketStart: 13),
+            NearestCase(age: 19, bracketStart: 13),
+            NearestCase(age: 24, bracketStart: 20),
+            NearestCase(age: 27, bracketStart: 30),
+            NearestCase(age: 25, bracketStart: 20),  // tie → younger
+            NearestCase(age: 33, bracketStart: 35),
+            NearestCase(age: 68, bracketStart: 70),
+            NearestCase(age: 5, bracketStart: 6),    // below the table clamps up
+            NearestCase(age: 100, bracketStart: 70), // above the table clamps down
+        ])
+        func nearestBracket(testCase: NearestCase) {
+            #expect(HeartRateZones(age: testCase.age).bracket.ages.lowerBound == testCase.bracketStart)
         }
     }
 
