@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder localization: values copied from the default English strings, pending real translation. -->
+<resources>
+    <string name="app_name">HeartChart</string>
+    <string name="app_title">HeartChart</string>
+    <string name="age_with_value">Age %1$d</string>
+    <string name="set_age">Set Age</string>
+    <string name="pair_button">Pair</string>
+    <string name="unpair_button">Unpair</string>
+    <string name="unpair_confirm_title">Unpair this sensor?</string>
+    <string name="bpm_unit">BPM</string>
+    <string name="status_bluetooth_off">Bluetooth is off</string>
+    <string name="status_not_paired">No sensor paired — tap Pair to find your Polar H9</string>
+    <string name="status_searching">Searching for sensors…</string>
+    <string name="status_connecting">Connecting to %1$s…</string>
+    <string name="status_connected">Connected to %1$s</string>
+    <string name="status_reconnecting">Sensor out of range — reconnecting…</string>
+    <string name="unnamed_sensor">Heart Rate Sensor</string>
+    <string name="error_connection_failed">Couldn\'t connect to the sensor.</string>
+    <string name="error_connection_lost">Lost contact with the sensor.</string>
+    <string name="retry">Retry</string>
+    <string name="age_title">Age</string>
+    <string name="age_section">Your age</string>
+    <string name="age_footer">Age sets the target zone and maximum heart rate lines on the chart.</string>
+    <string name="zones_section">Your zones</string>
+    <string name="target_zone_label">Target zone</string>
+    <string name="zone_range_value">%1$d–%2$d bpm</string>
+    <string name="max_heart_rate_label">Max heart rate</string>
+    <string name="bpm_value">%1$d bpm</string>
+    <string name="save">Save</string>
+    <string name="pairing_title">Pair Sensor</string>
+    <string name="cancel">Cancel</string>
+    <string name="pairing_bt_off_title">Bluetooth Is Off</string>
+    <string name="pairing_bt_off_message">Turn on Bluetooth to find your heart rate sensor.</string>
+    <string name="pairing_searching">Searching…</string>
+    <string name="pairing_hint">Moisten the electrodes and wear the strap — the Polar H9 only advertises while worn.</string>
+    <string name="chart_low_label">Low %1$d</string>
+    <string name="chart_high_label">High %1$d</string>
+    <string name="chart_max_label">Max %1$d</string>
+    <string name="chart_accessibility_label">Heart rate chart</string>
+</resources>
